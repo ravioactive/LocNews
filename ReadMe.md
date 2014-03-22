@@ -30,3 +30,4 @@ A Location-aware News search engine based on the news articles from the WikiNews
 
 Primarily in JAVA, JSP, JavaScript, Spring.
 WebApp not live. URL available on request.
+
