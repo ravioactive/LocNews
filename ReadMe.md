@@ -4,10 +4,11 @@
 
 
  
-1. location search web applicaion code and a generated WAR file is provided.
-2.Copy the WAR file and paste it into the APACHE TOMCAT webapp folder.
-3. Start the server by using start.bat in bin folder of apache tomcat.
-4. Access the application by typing the URL http://localhost:8080/LocationSearch/search
-5. To create a new WAR File from the application run the pom.xml file in the LocationSearch code by typing the command mvn clean install -DskipTests
-6. To find LocationSearch.war go to the TARGET folder. 
-7. Change the path of the source file in dataconfig.xml of each core according to your system.
+1. location search web applicaion code is in 'processor' folder.
+2. SOLR cores for the project have their solrconfig,xml and schema.xml in the 'solr' folder.
+3. Build the WAR file. Copy the WAR file and paste it into the APACHE TOMCAT webapp folder.
+4. Deploy the app on your Apache Tomcat installtion by the usual methods.
+5. Access the application by typing the URL 'http://localhost:8080/LocationSearch/search'
+6. To create a new WAR File from the application run the pom.xml file in the LocationSearch code by typing the command mvn clean install -DskipTests
+7. The Data files for the GeoNames location database can be downloaded from www.geonames.org. Just download, update their locations in each core's <core>-data-config.xml. Default is 'C:/solr-4.5.1/example/project3/<core>/info'.
+8. Email me for any queries at: ravioactive@gmail.com
