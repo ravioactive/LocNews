@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="continent" version="1.5">
+    <!--
+    Europe - EU, Asia - AS, North America - NA, Africa AF, Antartica AN, South America - SA, Oceania - OC
+    -->
+    <fields>
+      <field name="id" type="long" indexed="true" required="true" stored="true"/>
+      <field name="cntcode" type="text" indexed="true" required="true" stored="true"/>
+      <field name="cntname" type="text" indexed="true" required="true" stored="true"/>
+    </fields>
+    <uniqueKey>id</uniqueKey>
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="text" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+      </fieldType>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

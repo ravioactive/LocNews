@@ -1,0 +1,37 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseContinentData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('id',entries[0]);
+                row.put('cntcode',entries[1]);
+                row.put('cntname',entries[2]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="continent-data"
+        basePath="C:/solr-4.5.1/example/project3/continent/info/"
+        encoding="utf-8"/>
+    <document name="continent">
+        <entity name="continentcsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/sample/continent/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false"
+            pk="id">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${continentcsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="continent-data"
+                pk="id"
+                transformer="script:parseContinentData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>
+

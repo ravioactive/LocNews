@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="language" version="1.5">
+    <!--
+    
+    -->
+    <fields>
+      <field name="langcode3" type="string" indexed="true" required="true" stored="true"/>
+      <field name="langcode2" type="string" indexed="true" required="true" stored="true"/>
+      <field name="langcode1" type="string" indexed="true" required="true" stored="true"/>
+      <field name="langname" type="text" indexed="true" required="true" stored="true"/>
+    </fields>
+    <uniqueKey>langcode3</uniqueKey>
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="text" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+      </fieldType>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

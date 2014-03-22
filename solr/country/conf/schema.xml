@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="country" version="1.5">
+    <!-- 
+    #ISO  ISO3  ISO-Numeric fips  Country Capital Area(in sq km)  Population  Continent tld CurrencyCode  CurrencyName  Phone Postal Code Format  Postal Code Regex Languages geonameid neighbours  EquivalentFipsCode
+    -->
+    <fields>
+      <field name="id" type="long" indexed="true" stored="true" required="true" multiValued="false"/>
+      <field name="cntryname" type="string" indexed="true" stored="true" required="true"/>
+      <field name="cntrycode" type="string" indexed="true" stored="true" required="true"/>
+      <field name="cntrycapital" type="string" indexed="true" stored="true" required="true"/>
+      <field name="cntrycontinent" type="string" indexed="true" stored="true" required="true"/>
+      <field name="cntrycurrency" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
+      <field name="cntrycurrcode" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
+      <field name="cntryneighbors" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
+      <field name="cntryarea" type="double" indexed="true" stored="true" required="false"/> 
+      <field name="cntrypopulation" type="long" indexed="true" stored="true" required="false"/> 
+      <field name="cntrytld" type="string" indexed="true" stored="true" required="false"/>
+      <field name="lang" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
+      <field name="zipregex" type="string" indexed="true" stored="true" required="false"/>
+    </fields>
+    <uniqueKey>id</uniqueKey>
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+      <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

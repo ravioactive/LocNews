@@ -1,0 +1,292 @@
+
+
+
+
+.gradient {
+	/* Anciens navigateurs */
+	background: #E9E9E9 url("gradient-bg.png") repeat-x top;
+	-o-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	/* Navigateurs récents */
+	background: -webkit-gradient(
+		linear,
+		left top, left bottom,
+		from(#F7F7F7),
+		to(#E9E9E9)
+	);
+	background: -webkit-linear-gradient(
+		top,
+		#F7F7F7,
+		#E9E9E9
+	);
+	background: -moz-linear-gradient(
+		top,
+		#F7F7F7,
+		#E9E9E9
+	);
+	background: -o-linear-gradient(
+		top,
+		#F7F7F7,
+		#E9E9E9
+	);
+	background: linear-gradient(
+		top,
+		#F7F7F7,
+		#E9E9E9
+	);
+}
+
+
+div#barreHaut{
+
+
+position:fixed;
+top:20px;
+left:0;
+width:100%;
+z-index:3;
+box-shadow: 0px 0px 3px rgba(0,0,0,0.35);
+border-bottom:solid 1px #f0f0f0;
+
+}
+
+
+
+
+
+
+.frenchlabs{
+	
+	font-size : 35px;
+	font-family : "CalgaryScriptRegular";
+	text-decoration : none;
+	line-height : 1em;
+	color : #d93b3f;
+	-webkit-transition : color, opacity .5s linear;
+	-moz-transition : color, opacity .5s linear;
+	-o-transition : color, opacity .5s linear;
+	transition : color, opacity .5s linear;
+	
+	
+}
+
+
+
+
+
+/*  SEARCH BOX
+    ----------------------------------------------------- */
+
+#box {
+    background : #D8D8D8;
+    -webkit-border-radius : 4px;
+    -moz-border-radius : 4px;
+    border-radius : 4px;
+    -webkit-box-shadow : 0px 0px 3px rgba(255,255,255,0.35);
+    -moz-box-shadow : 0px 0px 3px rgba(255,255,255,0.35);
+    box-shadow : 0px 0px 3px rgba(255,255,255,0.35);
+    padding: 30px 40px;
+    
+    position: relative;
+}
+
+#input {
+    background-color : white;
+    -webkit-border-radius : 8px;
+    border-radius : 8px;
+    -moz-border-radius : 8px;
+    padding-top:3px;
+    padding-right:28px;
+    padding-left:3px;
+    height:40px;
+  
+    }
+	
+#advancedSearchDiv input{
+    background-color : white;
+    -webkit-border-radius : 8px;
+    border-radius : 5px;
+    -moz-border-radius : 8px;
+    padding-right:28px;
+    height:30px;
+	margin-bottom:5px;
+  
+}
+
+.demoClass:hover { cursor: hand; }
+
+.demoClass{
+}
+
+#input input {
+  	
+    border: none;
+    background-color : white;
+    -webkit-appearance: textfield;
+    font: 19px 'HelveticaNeue-Light', "Helvetica Neue Light", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-weight: 300;
+    color: #363d42;
+    width:100%;
+}
+
+#input input:focus {
+    border-color: #d5d5d5;
+    -webkit-box-shadow: 0 0 20px white;
+    -moz-box-shadow: 0 0 20px white;
+    box-shadow: 0 0 20px white;
+}
+
+.categorie-active {
+	background: #C4C4C4;
+    right: 49px;
+    top: 39px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+	font-weight:bolder;
+}
+
+.categorie-active:hover {
+    background: #9D9D9D;
+    color: white;
+}
+
+.categorie-active:active {
+    background: #616161;
+}
+
+.categorie {
+	
+    right: 49px;
+    top: 39px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #C4C4C4;
+    cursor: pointer;
+    text-decoration: none;
+	font-weight:bolder;
+}
+
+.categorie:hover {
+    background: #9D9D9D;
+    color: white;
+}
+
+.categorie:active {
+    background: #616161;
+}
+
+#lang {
+    position: absolute;
+    left:49px;;
+    top: 39px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #C4C4C4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#glass {
+	width:30px;
+	height:20px;
+    position: absolute;
+    right:49px;
+    top: 39px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #C4C4C4;
+    cursor: pointer;
+    text-decoration: none;
+	background: transparent url(Perspective-Button-Search-icon.png) no-repeat 8px center;
+}
+
+#glass:hover{
+		background: transparent url(Perspective-Button-Search-icon.png) no-repeat 8px center;
+}
+
+#lang:hover {
+    background: #C4C4C4;
+    color: white;
+}
+
+#lang:active {
+    background: #9D9D9D;
+}
+
+#method {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#method a {
+    padding: 3px 6px;
+    margin: 0 2px;
+    cursor: pointer;
+    color: #c0c0c0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: -webkit-box-shadow, background-color 0.2s linear;
+    -moz-transition: -moz-box-shadow, background-color 0.2s linear;
+    transition: box-shadow, background-color 0.2s linear;
+}
+
+#method a.active,
+#method a:hover {
+    background-color: #c0c0c0;
+    color: white;
+    text-shadow: none;
+    -webkit-border-radius : 4px;
+    -moz-border-radius : 4px;
+    border-radius : 4px;
+    }
+
+#method a:active {
+    background: #9D9D9D;
+}
+
+
+#barreHaut {
+    margin-top:-20px;
+	padding-left:30px;
+	padding-right:30px;
+    height: 40px;
+    border-bottom:1px solid #DBDBDB;
+}
+
+  
+
+
+ 
+ 
+
+  #haut{
+ 
+ background: #fff center 0 no-repeat fixed;
+ }
+ 
+
+ 
+
+ 

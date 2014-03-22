@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="timezone" version="1.5">
+    <!--
+      
+    -->
+    <fields>
+      <field name="countrycode" type="text" indexed="true" stored="true" required="true" multiValued="false"/> 
+      <field name="timezone" type="text" indexed="true" stored="true" required="true" multiValued="false"/> 
+      <field name="gmtoffset" type="float" indexed="true" stored="true" required="false" multiValued="false"/> 
+      <field name="dstoffset" type="float" indexed="true" stored="true" required="false" multiValued="false"/> 
+      <field name="rawoffset" type="float" indexed="true" stored="true" required="false" multiValued="false"/> 
+    </fields>
+    <uniqueKey>countrycode</uniqueKey>
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="text" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+      </fieldType>
+      <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

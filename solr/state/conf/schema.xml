@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="state" version="1.5">
+    <!--
+      
+    -->
+    <fields>
+      <field name="id" type="long" indexed="true" stored="true" required="true" multiValued="false"/> 
+      <field name="statenameascii" type="text" indexed="true" stored="true" required="false"/>
+      <field name="statename" type="string" indexed="true" stored="true" required="true"/>
+      <field name="statecode" type="string" indexed="true" stored="true" required="true"/>
+      <field name="statecountry" type="string" indexed="true" stored="true" required="true"/>
+    </fields>
+    <uniqueKey>id</uniqueKey>
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="text" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+      </fieldType>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

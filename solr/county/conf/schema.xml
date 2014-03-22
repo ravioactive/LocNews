@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <schema name="county" version="1.5">
+    <!--
+    -->
+    <fields>
+      <field name="id" type="long" indexed="true" stored="true" required="true" multiValued="false"/> 
+      <field name="countynameascii" type="text" indexed="true" stored="true" required="false"/>
+      <field name="countyname" type="string" indexed="true" stored="true" required="true"/>
+      <field name="countycode" type="string" indexed="true" stored="true" required="true"/> 
+      <field name="countystate" type="string" indexed="true" stored="true" required="true"/> 
+      <field name="countycountry" type="string" indexed="true" stored="true" required="true"/> 
+      
+    </fields>
+    <uniqueKey>id</uniqueKey> 
+    <!-- Copy fields go here -->
+    <types>
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+      <fieldType name="text" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+      </fieldType>
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    </types>
+
+    <!--
+     <similarity class="com.example.solr.CustomSimilarityFactory">
+       <str name="paramkey">param value</str>
+     </similarity>
+    -->
+
+  </schema>

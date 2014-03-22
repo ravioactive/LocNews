@@ -1,0 +1,7 @@
+6255146	AF	Africa
+6255147	AS	Asia
+6255148	EU	Europe
+6255149	NA	North America
+6255151	OC	Oceania
+6255150	SA	South America
+6255152	AN	Antarctica			

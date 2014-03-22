@@ -1,0 +1,38 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseLanguageData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('langcode3',entries[0]);
+                row.put('langcode2',entries[1]);
+                row.put('langcode1',entries[2]);
+                row.put('langname',entries[3]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="language-data"
+        basePath="C:/solr-4.5.1/example/project3/language/info/"
+        encoding="utf-8"/>
+    <document name="language">
+        <entity name="languagecsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/language/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false"
+            pk="id">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${languagecsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="language-data"
+                pk="langcode3"
+                transformer="script:parseLanguageData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>
+

@@ -1,0 +1,40 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseFeatureData(row) {
+                var entries = row.get('rawLine').split('\\t');
+
+                row.put('id', entries[0]);
+                var featureCodes = entries[0].split('\\.');
+                row.put('featuretype',featureCodes[0]);
+                row.put('featurecode',featureCodes[1]);
+
+                row.put('featurename',entries[1]);
+                row.put('featuredesc',entries[2]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="feature-data"
+        basePath="C:/solr-4.5.1/example/project3/feature/info/"
+        encoding="utf-8"/>
+    <document name="feature">
+        <entity name="featurecsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/feature/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${featurecsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="feature-data"
+                pk="featurecode"
+                transformer="script:parseFeatureData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>

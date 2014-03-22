@@ -1,0 +1,37 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseTimezoneData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('countrycode',entries[0]);
+                row.put('timezone',entries[1]);
+                row.put('gmtoffset',entries[2]);
+                row.put('dstoffset',entries[3]);
+                row.put('rawoffset',entries[4]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="timezone-data"
+        basePath="C:/solr-4.5.1/example/project3/timezone/info/"
+        encoding="utf-8"/>
+    <document name="timezone">
+        <entity name="timezonecsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/timezone/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${timezonecsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="timezone-data"
+                pk="countrycode"
+                transformer="script:parseTimezoneData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>

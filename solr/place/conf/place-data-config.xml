@@ -1,0 +1,59 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parsePlaceData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('id', entries[0]);
+                row.put('name', entries[1]);
+                row.put('nameascii', entries[2]);
+                if(entries[3] != null) {
+                    var alternatenames = entries[3].split(',');
+                    var numalternates = alternatenames.length;
+                    var alternatearr = new java.util.ArrayList();
+                    for(var i=0; i<numalternates; i++) {
+                        if(alternatenames[i]!=null) {
+                            alternatearr.add(alternatenames[i]);
+                        }
+                    }
+                    row.put('namealternate', alternatearr);
+                }
+                
+                var coordinates = entries[4]+","+entries[5];
+                row.put('location', coordinates);
+                row.put('featureclass', entries[6]);
+                row.put('featurecode', entries[7]);
+                row.put('countrycode',entries[8]);
+                row.put('admin1code',entries[10]);
+                row.put('admin2code',entries[11]);
+                row.put('admin3code',entries[12]);
+                row.put('admin4code',entries[13]);
+                row.put('population',entries[14]);
+                row.put('elevation',entries[16]);
+                row.put('timezone',entries[17]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="place-data"
+        basePath="C:/solr-4.5.1/example/project3/place/info/"
+        encoding="utf-8"/>
+    <document name="place">
+        <entity name="placecsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/place/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${placecsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="place-data"
+                pk="id"
+                transformer="script:parsePlaceData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>

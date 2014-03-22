@@ -1,0 +1,40 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseStateData(row) {
+                var entries = row.get('rawLine').split('\\t');
+
+                row.put('id',entries[3]);
+                row.put('statenameascii', entries[2]);
+                row.put('statename', entries[1]);
+                
+                var code = entries[0].split('\\.');
+                row.put('statecountry', code[0]);
+                row.put('statecode', code[1]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="state-data"
+        basePath="C:/solr-4.5.1/example/project3/state/info/"
+        encoding="utf-8"/>
+    <document name="state">
+        <entity name="statecsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/state/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${statecsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="state-data"
+                pk="id"
+                transformer="script:parseStateData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>

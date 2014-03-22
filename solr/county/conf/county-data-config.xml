@@ -1,0 +1,40 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseCountyData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('id',entries[3]);
+                row.put('countynameascii', entries[2]);
+                row.put('countyname',entries[1]);
+
+                var code = entries[0].split('\\.');
+                row.put('countycountry', code[0]);
+                row.put('countystate', code[1]);
+                row.put('countycode',code[2]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="county-data"
+        basePath="C:/solr-4.5.1/example/project3/county/info/"
+        encoding="utf-8"/>
+    <document name="county">
+        <entity name="countycsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/county/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                url="${countycsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="county-data"
+                pk="id"
+                transformer="script:parseCountyData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>

@@ -1,0 +1,466 @@
+/* @override http://go.frenchlabs.net/style/style-minimalism-white.css */
+
+
+@font-face {
+	font-family: 'CalgaryScriptRegular';
+	src: url('../fonts/calgaryscript-webfont.eot?') format('eot'),
+     url('../fonts/calgaryscript-webfont.ttf') format('truetype'),
+     url('../fonts/calgaryscript-webfont.woff') format('woff'),
+     url('../fonts/calgaryscript-webfont.svg#webfont2Q8MtVLR') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+html{
+overflow-x:hidden ;
+}
+
+.sloganImage {
+	max-width: 100%;
+}
+
+#pageslide {
+	z-index: 2;
+}
+
+span.frenchlabs img {
+	max-width: 100%;
+}
+
+
+#theme div.five.columns {
+	text-align: center;
+}		
+
+#theme div.five.columns div.theme-thumbnails {
+	width:276px;
+	height:144px;
+	margin: 10px auto;
+}
+
+#theme div.five.columns div.theme-thumbnails div.theme-overlay {
+	width:276px;
+	height: 144px;
+	margin-top:-145px;
+	position: absolute;
+	background:rgba(0,0,0,.4);
+	opacity: 0;
+	-webkit-transition:all .2s ease;
+}
+
+#theme div.five.columns div.theme-thumbnails:hover div.theme-overlay {
+	opacity: 1;
+}
+
+#theme div.five.columns div.theme-thumbnails div.theme-overlay h2 {
+	color:white;
+	text-shadow:none;
+	font-size:22px;
+	font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin-top: 35px;
+}
+
+#theme div.five.columns div.theme-thumbnails div.theme-overlay a {
+	color:white;
+	text-decoration: none;
+	border:none;
+	text-shadow:0 -1px 0 rgba(0,0,0,.4);
+	background-color:#c10c25;
+	padding:5px 7px;
+	border-radius: 5px;
+}
+
+div#header {
+    color: #a9a9a9;
+    font: bold 10px/15px "Lucida Grande", Lucida, Verdana, sans-serif;
+    width: 99%;
+    margin: 0;
+    display: block;
+    position: fixed;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: right;
+    height: 15px;
+    z-index: 1;
+}
+
+div#header a, div#header a:visited,div#header a:active {
+	text-decoration : none;
+	color: #a9a9a9;
+}
+
+div#header a:hover {
+	color : black;
+}
+
+
+
+  
+ .inscription{
+ 
+		/* Anciens navigateurs */
+	background: #d93b3f;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #f7f7f7;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+
+	  cursor: pointer;
+	 
+	  line-height: normal;
+	  padding: 7px 10px;
+	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+ 
+ }
+ 
+  .inscription:visited{
+ color:#fff;
+
+ 
+ }
+ 
+    .inscription:active{
+ background-color:#ae2f32;
+-moz-box-shadow:inset 0px 0px 2px 1px rgba(44, 44, 44, 0.50);
+-webkit-box-shadow:inset 0px 0px 2px 1px rgba(44, 44, 44, 0.50);
+box-shadow:inset 0px 0px 2px 1px rgba(44, 44, 44, 0.50);
+color: #fff;
+
+ }
+ 
+   .inscription:hover{
+ background-color:#363636;
+ color: #fff;
+
+
+
+ }
+ 
+ 	
+div.six.columns.omega form label > button.inscription { width:97% !important; } 
+
+
+ 
+  .connecter{
+ 
+		/* Anciens navigateurs */
+	
+	  background: #d93b3f;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #fff;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  cursor: pointer;
+	 
+	  line-height: normal;
+	  padding: 7px 10px;
+	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+ 
+ }
+ 
+ .connecter:visited{
+ color:#fff;
+ 
+ }
+ 
+ 
+     .connecter:active{
+ background-color:#ae2f32;
+-moz-box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+-webkit-box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+
+color:#fff;
+ }
+ 
+   .connecter:hover{
+ background-color:#363636;
+  color:#fff;
+
+
+
+ } 
+ 
+ #container{
+	margin-top:-20px;
+ 
+ 
+ }
+ 
+ 
+#space {
+  height:30%;
+  
+  
+  
+}
+
+#bas{
+	height:100%;
+	color : #6F6F6F;
+	text-shadow: 0px 1px 1px #fff;
+	border-top:solid 1px #d1d1d1; 
+	background: url(../img/ui/shattered.png);
+	
+	
+	
+}
+#bas a, a:visited { color: #6E6E6E;   border-bottom:1px solid #a8a8a8; outline: 0;  }
+	#bas a:hover, a:focus { color: #4C4C4C; border-bottom:0px solid #cbcbcb; }
+
+
+.logo{
+	
+
+	margin-top:-110px;
+	cursor:pointer;
+	
+	
+	
+}
+
+.logoChoix{
+	margin-left:38%;
+
+	position:absolute;
+	display:none;
+	
+	
+}
+
+.logoChoix:hover{
+	cursor:pointer;
+	
+}
+
+
+
+.footer {
+	font-size:12px;
+	padding-bottom:10px;
+	margin-right:25px;
+	margin-left:25px;
+	
+}
+
+
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+  #barreHaut .nouveau {
+    display:none;
+}
+#barreHaut span{
+	display:block;
+
+}
+  
+  }
+
+
+  @media only screen and (max-width: 479px) {
+  #barreHaut .nouveau {
+    display:none;
+}
+  
+  
+  }
+  
+  body{
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	background: url(../img/ui/shattered.png);
+	
+  }
+  
+
+ 
+  .co{
+ 
+		/* Anciens navigateurs */
+	background: #4a4a4a;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #fdfdfd;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  cursor: pointer;
+	  line-height: normal;
+	  padding: 7px 10px;
+	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+ 
+ }
+ 
+  .co:visited{
+ color:#000;
+
+ 
+ }
+ 
+    .co:active{
+ background-color:#ae2f32;
+-moz-box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+-webkit-box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+box-shadow:inset 0px 0px 5px 1px rgba(0,0,0,.5);
+
+color:#fff;
+
+ }
+ 
+   .co:hover{
+ background-color:#2e2e2e;
+ color: #f1f1f1;
+
+
+
+ }
+ 
+
+
+ 
+  .onglet{
+ 
+		/* Anciens navigateurs */
+	background: #bebebe;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: #000;
+	  display: inline-block;
+	  font-size: 11px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  cursor: pointer;
+	  line-height: normal;
+	  padding: 7px 10px;
+	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	text-shadow: 0px 0px 0px #464646;
+	width:90%;
+	text-align:center;
+	margin-bottom:4px;
+ }
+ 
+ .onglet:visited{
+ color:#000;
+ 
+ }
+ 
+ 
+     .onglet:active{
+ background-color:#989898;
+-moz-box-shadow:inset 0px 0px 5px 1px #646464;
+-webkit-box-shadow:inset 0px 0px 5px 1px #646464;
+box-shadow:inset 0px 0px 5px 1px #646464;
+
+
+ }
+ 
+    .onglet:hover{
+ background-color:#ababab;
+  color:#393939;
+
+
+
+ }
+ 
+
+
+
+/******************************
+Espace Membre
+******************************/
+
+#bas .container > div.sidebar-membre {
+	padding-top:20px;
+}
+
+div.sidebar-membre ul#nav li {
+	height:28px;
+	background:white;
+	border-radius: 3px;
+	margin-bottom:10px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+
+div.sidebar-membre ul#nav li a {
+	background:;
+	width:95%;
+	border-bottom: 0;
+	display: inline-block;
+	margin-left:8px;
+	margin-top:5px;
+}
+
+div.sidebar-membre ul#nav {
+}
+
+
+div.contenu-membre {
+	margin-top:20px;
+	background:white;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+
+div.contenu-membre div.logosMoteurs {
+	width:84%;
+	margin:20px auto;
+}
+
+div.contenu-membre div.dropzoneMoteurs {
+	width:84%;
+	margin:20px auto;
+	height:60px;
+	border:2px dashed grey;
+	border-radius: 5px;
+}
+
+div.contenu-membre img.logoSelection {
+	width:100px;
+	display: inline-block;
+	margin: 10px 0;
+}
+
+
+
+#barreHaut span a.nouveau, #barreHaut span a.nouveau:visited {
+	border-bottom: 1px solid rgba(217, 59, 63, .4);
+	margin-right: 10px;
+	margin-top: 5px;
+	color:#d93b3f;
+} 
+
+#barreHaut span a.nouveau:hover {
+	border-bottom: none;
+	color: #2e2e2e;
+}
+
+a.motdepasseperdu {
+	color:white; 
+	margin-top:5px; 
+	font-size:12px; 
+	float:right; 
+	margin-right:23px; 
+	font-style:italic;
+	border-bottom: 1px solid rgba(255,255,255,.7);
+	padding: 0 3px;
+	opacity: .8;
+}
+
+a.motdepasseperdu:hover {
+	border-bottom-color: white;
+	color: white;
+	opacity: 1;
+}
+
+

@@ -1,0 +1,72 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            function parseCountryData(row) {
+                var entries = row.get('rawLine').split('\\t');
+                row.put('id', entries[16]);
+                row.put('cntryname', entries[4]);
+                row.put('cntrycode', entries[0]);
+                row.put('cntrycapital', entries[5]);
+                row.put('cntrycontinent', entries[8]);
+                row.put('cntrycurrency', entries[11]);
+                row.put('cntrycurrcode', entries[10]);
+                
+                if(entries[17] != null) {
+                    var neighbors = entries[17].split(',');
+                    var numNeighbors = entries.length;
+                    var neighborsArr = new java.util.ArrayList();
+                    for(var i=0; i<numNeighbors; i++) {
+                        if(neighbors[i] != null) {
+                            neighborsArr.add(neighbors[i]);
+                        }
+                    }
+                    row.put('cntryneighbors', neighborsArr);
+                }
+
+                if(entries[6] != null) {
+                    row.put('cntryarea', entries[6]);
+                }
+
+                row.put('cntrypopulation', entries[7]);
+                row.put('cntrytld', entries[9]);
+
+                if(entries[15] != null) {
+                    var languages = entries[15].split(",");
+                    var langLength = languages.length;
+                    var langArr = new java.util.ArrayList();
+
+                    for(var i=0; i<langLength; i++) {
+                        langArr.add(languages[i]);
+                    }
+                    row.put('lang', langArr);                
+                }
+
+                row.put('zipregex', entries[14]);
+                return row;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" 
+        name="country-data"
+        basePath="C:/solr-4.5.1/example/project3/country/info/"
+        encoding="utf-8"/>
+    <document name="country">
+        <entity name="countrycsvfile"
+            processor="FileListEntityProcessor"
+            baseDir="C:/solr-4.5.1/example/project3/country/info/"
+            fileName=".*.txt$"
+            rootEntity="false"
+            recursive="false">
+
+            <entity name="info-line"
+                processor="LineEntityProcessor"
+                skipLineRegex="^#"
+                url="${countrycsvfile.fileAbsolutePath}"
+                rootEntity="true"
+                dataSource="country-data"
+                pk="id"
+                transformer="script:parseCountryData">
+            </entity>
+        </entity>
+    </document>
+</dataConfig>
